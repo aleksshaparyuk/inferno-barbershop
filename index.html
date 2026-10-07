@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFERNO | Мужской клуб</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">INFERNO<span class="dot">.</span></div>
+            <nav class="nav">
+                <a href="#" data-i18n="nav_services">Услуги</a>
+                <a href="#" data-i18n="nav_masters">Мастера</a>
+                <a href="#" data-i18n="nav_contacts">Контакты</a>
+            </nav>
+            <!-- Переключатель языков -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный экран (Hero) -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 data-i18n="hero_title">Твой стиль.<br>Твои <span class="text-red">правила</span>.</h1>
+            <p data-i18n="hero_text">Премиальные стрижки и опасное бритье в атмосфере настоящего мужского клуба.
+                Почувствуй огонь качества.</p>
+            <a href="#feedback" class="btn-fire" data-i18n="hero_btn">Записаться сейчас</a>
+        </div>
+    </section>
+    <!-- Секция Услуг -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title" data-i18n="services_title">Наши услуги</h2>
+            <p class="section-subtitle" data-i18n="services_subtitle">Классика и современные тренды в одном месте</p>
+
+            <div class="services-grid">
+                <!-- Карточка 1 -->
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3 data-i18n="service_1_title">Мужская стрижка</h3>
+                    <p data-i18n="service_1_desc">Подбор формы, мытье головы, укладка премиальной косметикой.</p>
+                    <span class="service-price">1500 ₽</span>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="service-card">
+                    <div class="service-icon">🧔</div>
+                    <h3 data-i18n="service_2_title">Моделирование бороды</h3>
+                    <p data-i18n="service_2_desc">Оформление контуров опасной бритвой, распаривание, уход маслами.</p>
+                    <span class="service-price">1000 ₽</span>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="service-card">
+                    <div class="service-icon">🔥</div>
+                    <h3 data-i18n="service_3_title">Комплекс "Отец и Сын"</h3>
+                    <p data-i18n="service_3_desc">Две стрижки и укладка по специальной семейной цене.</p>
+                    <span class="service-price">2500 ₽</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция обратной связи (Feedback) -->
+    <section class="feedback" id="feedback">
+        <div class="container">
+            <h2 class="section-title" data-i18n="feedback_title">Предложи идею</h2>
+            <p class="section-subtitle" data-i18n="feedback_subtitle">Нам важно твое мнение. Помоги нам стать лучше.</p>
+
+            <form class="feedback-form" id="feedbackForm">
+                <input type="text" class="form-input" placeholder="Твое имя" data-i18n-placeholder="form_name" required>
+                <textarea class="form-input" rows="4" placeholder="Твое предложение или идея..."
+                    data-i18n-placeholder="form_message" required></textarea>
+                <button type="submit" class="btn-fire" data-i18n="form_submit">Отправить</button>
+            </form>
+        </div>
+    </section>
+    <!-- Секция с картой -->
+    <section class="location" id="location">
+        <div class="container">
+            <h2 class="section-title" data-i18n="location_title">Как нас найти</h2>
+            <p class="section-subtitle" data-i18n="location_subtitle">Мы в самом центре города. Заезжай на своей или
+                такси.</p>
+
+            <div class="map-container">
+                <!-- Встраиваемая карта Google (можно заменить на свой адрес) -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.586695372082!2d37.61763331593046!3d55.75581418055224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2sThe%20Moscow%20Kremlin!5e0!3m2!1sen!2sru!4v1620000000000!5m2!1sen!2sru"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подключаем наш скрипт -->
+    <script src="script.js"></script>
+</body>
+
+</html>

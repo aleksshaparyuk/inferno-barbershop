@@ -1,0 +1,301 @@
+/* 1. Сброс и переменные */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #0a0a0a;
+    --bg-darker: #050505;
+    --accent-red: #ff1a1a;
+    --accent-red-glow: rgba(255, 26, 26, 0.4);
+    --text-white: #ffffff;
+    --text-gray: #a1a1a1;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* 2. Шапка (Header) */
+.header {
+    position: absolute;
+    /* Чтобы шапка была поверх фона */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px 0;
+    z-index: 10;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text-white);
+}
+
+.logo .dot {
+    color: var(--accent-red);
+}
+
+.nav a {
+    color: var(--text-gray);
+    text-decoration: none;
+    margin-left: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--accent-red);
+}
+
+/* 3. Главный экран (Hero) */
+.hero {
+    position: relative;
+    height: 100vh;
+    /* На всю высоту экрана */
+    display: flex;
+    align-items: center;
+    /* Крутое мужское фото с Unsplash */
+    background: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+}
+
+/* Красное затемнение поверх фото для читаемости и стиля "огонь" */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0.7) 50%, rgba(255, 26, 26, 0.1) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    /* Текст не растягивается на весь экран, как в Figma */
+}
+
+.hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 64px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.text-red {
+    color: var(--accent-red);
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    max-width: 480px;
+}
+
+/* 4. Огненная кнопка */
+.btn-fire {
+    display: inline-block;
+    background-color: var(--accent-red);
+    color: var(--text-white);
+    padding: 16px 40px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    /* Эффект свечения */
+    box-shadow: 0 4px 20px var(--accent-red-glow);
+}
+
+.btn-fire:hover {
+    background-color: #ff4d4d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px var(--accent-red-glow);
+}
+
+/* 5. Переключатель языков */
+.lang-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid #333;
+    color: var(--text-gray);
+    padding: 6px 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    border-color: var(--accent-red);
+    color: var(--text-white);
+}
+
+.lang-btn.active {
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
+    color: var(--text-white);
+}
+
+/* 6. Секция обратной связи */
+.feedback {
+    padding: 80px 0;
+    background-color: var(--bg-darker);
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 42px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.feedback-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-input {
+    background-color: var(--bg-dark);
+    border: 1px solid #333;
+    color: var(--text-white);
+    padding: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent-red);
+}
+
+.form-input::placeholder {
+    color: #555;
+}
+
+/* 7. Секция локации */
+.location {
+    padding: 80px 0;
+    background-color: var(--bg-dark);
+    text-align: center;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #333;
+
+    /*  МАГИЯ CSS: Делаем обычную карту темной! */
+    filter: grayscale(100%) invert(92%) contrast(83%);
+    transition: filter 0.3s ease;
+}
+
+/* При наведении мыши карта становится чуть светлее (интерактив) */
+.map-container:hover {
+    filter: grayscale(50%) invert(92%) contrast(83%);
+}
+
+/* 8. Секция Услуг (CSS Grid) */
+.services {
+    padding: 80px 0;
+    background-color: var(--bg-darker);
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    /* Магия Grid: карточки сами перестраиваются. Минимум 280px, максимум - растягиваются */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: var(--bg-dark);
+    padding: 40px 30px;
+    border-radius: 8px;
+    border: 1px solid #222;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    /* Карточка "всплывает" при наведении */
+    border-color: var(--accent-red);
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.service-card p {
+    color: var(--text-gray);
+    font-size: 15px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.service-price {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    color: var(--accent-red);
+    font-weight: 700;
+}
